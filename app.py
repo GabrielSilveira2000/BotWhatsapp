@@ -1,15 +1,12 @@
 
+from src.routes import email, whatsapp
 from flask import Flask, request
 
+
 app = Flask(__name__)
+app.register_blueprint(email.app_email)
+app.register_blueprint(whatsapp.app_whatsapp)
 
-@app.route("/enviarMensagem", methods=["POST"])
-def enviarMensagem():
-  return "Mensagem enviada com sucesso!"
-
-@app.route("/enviarEmail", methods=["POST"])
-def enviarEmail():
-  return "Email enviado com sucesso!"
 
 if __name__ == "__main__":
-  app.run(debug=True)
+  app.run(host="0.0.0.0", port="3000", debug=True)
