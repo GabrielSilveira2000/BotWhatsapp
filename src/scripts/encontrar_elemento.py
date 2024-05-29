@@ -20,7 +20,7 @@ def Elemento(Navegador_Instaciado:webdriver.Chrome, Tipo_Elemento:By, Nome_Tipo:
                     actions = ActionChains(Navegador_Instaciado, 0.2)
                     for char in Digitar:
                         actions.send_keys(char).perform()
-                        Tempo_Escrever = random.uniform(0.00001, 0.000003)
+                        Tempo_Escrever = random.uniform(0.01, 0.03)
                         time.sleep(Tempo_Escrever)
                 else:
                     if (HTML):

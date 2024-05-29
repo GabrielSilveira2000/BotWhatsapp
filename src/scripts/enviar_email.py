@@ -9,8 +9,9 @@ server.ehlo()
 server.login(email_remetente, email_remetente_senha)
 
 
-def enviar(email_destinatario:str, mensagem:str):
-    mensagem = unidecode(mensagem)
-    server.sendmail(email_remetente, email_destinatario, mensagem)
+def enviar(email_destinatarios:list, mensagems_destinarios:list):
+    for (email, mensagem)  in zip(email_destinatarios, mensagems_destinarios):
+        mensagem = unidecode(mensagem)
+        server.sendmail(email_remetente, email, mensagem)
     
-    return f"Email enviado com sucesso para {email_destinatario}"
+    return f"Email(s) enviado(s) com sucesso para(os) {email_destinatarios}"
