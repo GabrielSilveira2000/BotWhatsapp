@@ -1,8 +1,7 @@
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from unidecode import unidecode
 from selenium import webdriver
+import random
 import time
 
 

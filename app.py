@@ -1,11 +1,11 @@
 
-from src.routes import email, whatsapp
-from flask import Flask, request
+from src.routes import email
+from flask import Flask
 
 
 app = Flask(__name__)
 app.register_blueprint(email.app_email)
-app.register_blueprint(whatsapp.app_whatsapp)
+# app.register_blueprint(whatsapp.app_whatsapp)
 
 
 if __name__ == "__main__":
