@@ -5,7 +5,6 @@ from unidecode import unidecode
 from selenium import webdriver
 import time
 
-navegador = webdriver.Chrome()
 
 def Elemento(Navegador_Instaciado:webdriver.Chrome, Tipo_Elemento:By, Nome_Tipo:str, Digitar:str='', Submit: bool = False, Scrolar_Pagina:str= "", HTML:bool=False, Encontrado=False, Tempo_Scroll= 10, Obter_Elemneto:bool =False):
     try:
