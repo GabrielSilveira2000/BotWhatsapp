@@ -1,7 +1,7 @@
 from  webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
+from src.scripts.encontrar_elemento import Elemento
 from selenium.webdriver.common.by import By
-from encontrar_elemento import Elemento
 from selenium import webdriver
 from time import sleep
 import os
@@ -25,7 +25,7 @@ navegador.get('https://web.whatsapp.com/')
 
 def enviar(contatos:list, mensagens:list, arquivos:list):
     contato_anterior = ""
-    for i,(contato, mensagem, arquivo) in enumerate(zip(contatos, mensagens, arquivos)):
+    for i,(contato, mensagen, arquivo) in enumerate(zip(contatos, mensagens, arquivos)):
         
         if(contato_anterior == "" or not contato_anterior == contato):
             
@@ -42,9 +42,9 @@ def enviar(contatos:list, mensagens:list, arquivos:list):
         
         sleep(3)
         
-        if mensagem:
+        if mensagen:
             Elemento(navegador, By.XPATH, "//*[@id='main']/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]", Submit=False)
-            Elemento(navegador, By.XPATH, "//*[@id='main']/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]", Digitar=mensagem)
+            Elemento(navegador, By.XPATH, "//*[@id='main']/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]", Digitar=mensagen)
             Elemento(navegador, By.XPATH, '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button', Submit=False)
         
         if i < len(contatos):
