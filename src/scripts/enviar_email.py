@@ -1,8 +1,11 @@
 from unidecode import unidecode
 from smtplib import SMTP_SSL
+from dotenv import load_dotenv
+from os import getenv
 
-email_remetente = 'ens-thiagofachini@ugv.edu.br'
-email_remetente_senha = 'F4chini_0312'
+load_dotenv()
+email_remetente = getenv('EMAIL')
+email_remetente_senha = getenv('SENHA')
 
 server = SMTP_SSL('smtp.gmail.com', 465)
 server.ehlo()
